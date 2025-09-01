@@ -70,4 +70,40 @@ https://jsfiddle.net/
 4. Get back to master
 5. No change??
 
+## Do this
+> make some changes to the the file
+> View the status
+> commit the changes : message "revision"
+
+git diff
+
+---------
+
+Action | Status
+----------------
+-		Clean | Not staged
+C 		Dirty | Not staged
+git add Dirty | Staged
+commit	Clean | Not staged
+
+Reset the changes
+-------------------
+> git reset --hard
+	New File
+
+## Branching
+-- See current branch
+> git branch --show-current
+-- Create a new  branch
+> git checkout -b branch-name
+--Checkout to main branch
+> git checkout master
+
+## Merge
+-- Go to your destination branch
+> git checkout master
+-- Merge the source branch
+> git merge new-branch
+
+
 
