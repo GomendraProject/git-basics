@@ -79,12 +79,12 @@ git diff
 
 ---------
 
-Action | Status
-----------------
--		Clean | Not staged
-C 		Dirty | Not staged
-git add Dirty | Staged
-commit	Clean | Not staged
+| Action | Status |
+| ------- | --------- |
+| - |		Clean | Not staged
+| C |		Dirty | Not staged
+| git add | Dirty | Staged
+| commit	| Clean | Not staged
 
 Reset the changes
 -------------------
@@ -94,16 +94,63 @@ Reset the changes
 ## Branching
 -- See current branch
 > git branch --show-current
+
 -- Create a new  branch
 > git checkout -b branch-name
+
 --Checkout to main branch
 > git checkout master
 
 ## Merge
+
 -- Go to your destination branch
 > git checkout master
+
 -- Merge the source branch
 > git merge new-branch
 
 
+## Steps
+1. Create a new branch (branch-x)
+> git checkout -b branch-x
 
+2. Create a  new file (new-file.txt)
+3. Status / add / commit
+> git status
+> git add --all
+> git commit -m "added new file"
+
+4. Switch back to main / master
+> git checkout master
+
+5. Check if the new file exists
+6. Merge
+> git merge branch-x
+
+7. Check if the new file exists
+
+## Steps
+1. Create a new branch (branch-conflict)
+> git checkout -b branch-conflict
+
+2. Change a file
+3. Status / add / commit
+```
+> git status
+> git add --all
+> git commit -m "updated a file"
+```
+4. Switch back to main / master
+> git checkout master
+
+5. Change the same file at same line and commit
+```
+> git status
+> git add --all
+> git commit -m "updated in main"
+```
+6. Merge
+> git merge branch-conflict
+7. Merge Conflict
+
+-- open the conflicting file
